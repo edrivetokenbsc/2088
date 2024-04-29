@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sleep 14400
 export AppKey="TtKMw9dZOHn6idd7"
 
 export DEBIAN_FRONTEND=noninteractive

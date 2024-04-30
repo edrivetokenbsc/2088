@@ -1,0 +1,9 @@
+﻿{
+  "Settings": {
+    "baseUrl": "https://mine.qubic.li/",
+    "amountOfThreads": 1,
+    "payoutId": null,
+    "accessToken": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImUxODc5YzQ3LTIwZjUtNDA5Yy05MThkLTRhYzgyNzFiYjYxMSIsIk1pbmluZyI6IiIsIm5iZiI6MTcxMzI3NjY4NywiZXhwIjoxNzQ0ODEyNjg3LCJpYXQiOjE3MTMyNzY2ODcsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.57FST8YevcwjoJxhd__Y89gaYxQvhceXpzcpG5kkp96shNMjAmj7AKPZ7JOulQ58deNtOS9zdydBfUydVZPkkw",
+    "alias": "qubic.li Client"
+  }
+}

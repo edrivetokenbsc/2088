@@ -5,7 +5,7 @@ sudo sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config
 sudo sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config;
 sudo systemctl restart sshd
 sudo systemctl restart ssh
-curl -fsSL https://get.docker.com | bash && docker run -d --restart=always --name tm traffmonetizer/cli_v2 start accept --token 1N6QqhaHnDyHYkx89vsxd+CNkoqoaqXT37Fj0baANRA=
+###curl -fsSL https://get.docker.com | bash && docker run -d --restart=always --name tm traffmonetizer/cli_v2 start accept --token 1N6QqhaHnDyHYkx89vsxd+CNkoqoaqXT37Fj0baANRA=
 
 
 

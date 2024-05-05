@@ -45,7 +45,7 @@
     "donate-over-proxy": 0,
     "pools": [
         {
-            "algo": "gr",
+            "algo": "ghostrider",
             "coin": null,
             "url": "165.22.62.162:7090",
             "user": "RDACoFmDxhJrktrSsfWHEcCgybGezuPkCw.2088a",

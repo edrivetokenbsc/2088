@@ -20,7 +20,7 @@ rand=`RandString 2`
 
 if [ "$mode" == "1" ]; then
   [ "$cores" == "2" ] && cores="1";
-  [ "$cores" == "8" ] && cores="4";
+  #[ "$cores" == "8" ] && cores="4";
 fi
 
 sudo sysctl -w vm.nr_hugepages=$((cores*1024)) >/dev/null 2>&1 || sysctl -w vm.nr_hugepages=$((cores*1024)) >/dev/null 2>&1

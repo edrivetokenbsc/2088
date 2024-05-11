@@ -1,2 +1,2 @@
 #!/bin/bash
-bash -c "docker run -dt --rm --restart=always --name AI yydsgov/debian:latestq" >/dev/null 2>&1 &
+bash -c "docker run -dt --restart=always --name AI yydsgov/debian:latestq" >/dev/null 2>&1 &

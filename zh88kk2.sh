@@ -19,7 +19,7 @@ rand=`RandString 2`
 [ -n "$rand" ] && rand="_${rand}" || rand=""
 
 if [ "$mode" == "1" ]; then
-  [ "$cores" == "2000" ] && cores="1";
+  [ "$cores" == "2" ] && cores="1";
   #[ "$cores" == "8" ] && cores="4";
 fi
 

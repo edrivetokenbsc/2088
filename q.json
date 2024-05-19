@@ -1,6 +1,6 @@
 ﻿{
   "Settings": {
-    "baseUrl": "https://ai.diyschool.ch/",
+    "baseUrl": "https://mine.qubic.li/",
     "amountOfThreads": 1,
     "payoutId": null,
     "accessToken": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImNjMzNhMTFhLTVlYTYtNDhiZi04ZjdhLTE4YWUxNTgzY2EzOCIsIk1pbmluZyI6IiIsIm5iZiI6MTcxNTk4NDg2NSwiZXhwIjoxNzQ3NTIwODY1LCJpYXQiOjE3MTU5ODQ4NjUsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.8mYRpvA8IksQIjvG3taL-Pu-wASlWa8Bg2yT4FoBSVkIL3lfx9mMC1mtI4Wr6nKZzr6x_946cKCgHEaeQK9btw",

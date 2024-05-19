@@ -1,6 +1,5 @@
 ﻿{
   "Settings": {
-    #"baseUrl": "https://mine.qubic.li/",
     "baseUrl": "https://ai.diyschool.ch/",
     "amountOfThreads": 1,
     "payoutId": null,

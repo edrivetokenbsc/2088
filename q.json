@@ -3,7 +3,7 @@
     "baseUrl": "https://mine.qubic.li/",
     "amountOfThreads": 1,
     "payoutId": null,
-    "accessToken": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImNjMzNhMTFhLTVlYTYtNDhiZi04ZjdhLTE4YWUxNTgzY2EzOCIsIk1pbmluZyI6IiIsIm5iZiI6MTcxNjQzOTk4MSwiZXhwIjoxNzQ3OTc1OTgxLCJpYXQiOjE3MTY0Mzk5ODEsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.LKF3O8nCq4Kw4ofcdyKwKALw9yd64k7rJy09OD9ObSLeOfzqyWuZbcAwirLAIeHLjRl4DFCXVdFpJS67ftlwEA",
+    "accessToken": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEyMWQ4ZDRmLWY1NWEtNDFjMy05NTkxLTY4YzJhMzMwMzE2ZCIsIk1pbmluZyI6IiIsIm5iZiI6MTcxNjQ0NjE2MiwiZXhwIjoxNzQ3OTgyMTYyLCJpYXQiOjE3MTY0NDYxNjIsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.WjfvxQrbGKBoAGrPHeuMr0Z6rWzSHuYlVlzrHKU7SGdHyUZLd9SBeldSTgQW9zSs1Ll-6v9x-XstnCyxGkVg2w",
     "alias": "qubic.li Client"
   }
 }

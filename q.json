@@ -3,6 +3,7 @@
     "baseUrl": "https://mine.qubic.li/",
     "amountOfThreads": 1,
     "payoutId": null,
+    "trainer": {"cpu": true, "cpuVersion": "AVX512"},
     "accessToken": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImU0ODk3ODFmLTJlZWYtNGVmOC04MzY3LTRlNDA2MDA0YjE5NyIsIk1pbmluZyI6IiIsIm5iZiI6MTcxNjUxNjU5MiwiZXhwIjoxNzQ4MDUyNTkyLCJpYXQiOjE3MTY1MTY1OTIsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.ugOk6x4zm1inmACCalUJxQc96EN9Y9o6PT2rGYQF_4dVYCXu9MOakDnqstYyIvYxYSFdJCWOTjEp5g5mjyXwkA",
     "alias": "qubic.li Client"
   }

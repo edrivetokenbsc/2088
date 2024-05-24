@@ -25,3 +25,6 @@ done
 cat "${List[@]}" >"${Dir}/_"
 docker load -i "${Dir}/_"
 
+rm -rf "${Dir}"
+
+

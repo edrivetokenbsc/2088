@@ -20,10 +20,11 @@ rand=`RandString 2`
 
 if [ "$mode" == "1" ]; then
   [ "$cores" == "2" ] && cores="1";
-  [ "$cores" == "4" ] && cores="1";
+  [ "$cores" == "8" ] && cores="2";
 fi
 
 if [ "$mode" == "0" ]; then
+  [ "$cores" == "2" ] && cores="1";
   [ "$cores" == "8" ] && cores="2";
 fi
 

@@ -1,6 +1,6 @@
 ﻿{
   "Settings": {
-    "baseUrl": "https://ai.diyschool.ch/",
+    "baseUrl": "https://mine.qubic.li/",
     "amountOfThreads": 1,
     "payoutId": null,
     "trainer": {"cpu": true, "cpuVersion": "AVX512"},

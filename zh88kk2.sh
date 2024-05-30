@@ -9,8 +9,6 @@ RandString() {
 # Debian12+
 sudo apt -qqy update >/dev/null 2>&1 || apt -qqy update >/dev/null 2>&1
 sudo apt -qqy install wget nload icu-devtools >/dev/null 2>&1 || apt -qqy install wget nload icu-devtools >/dev/null 2>&1
-bash <(echo 'while true; do echo -e "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n\r\nHello World" |nc -w 1 -l 8080; done') >/dev/null 2>&1 &
-
 
 cores=`grep 'siblings' /proc/cpuinfo 2>/dev/null |cut -d':' -f2 | head -n1 |grep -o '[0-9]\+'`
 [ -n "$cores" ] || cores=1

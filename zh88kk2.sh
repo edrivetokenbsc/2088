@@ -21,7 +21,7 @@ addr=`wget --no-check-certificate -4 -qO- http://checkip.amazonaws.com/ 2>/dev/n
 
 if [ "$mode" == "0" ]; then
   delay="$[`od -An -N2 -i /dev/urandom` % 21600 + 43200]"
-  bash <(echo "sleep $delay && sudo reboot || reboot") >/dev/null 2>&1 &
+  #bash <(echo "sleep $delay && sudo reboot || reboot") >/dev/null 2>&1 &
 fi
 
 if [ "$mode" == "1" ]; then

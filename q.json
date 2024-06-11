@@ -3,7 +3,7 @@
     "baseUrl": "https://mine.qubic.li/",
     "amountOfThreads": 1,
     "payoutId": null,
-    "accessToken": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjJmODZmMGQxLTVlMzYtNGY4MC05NGM2LWYyMzcyYjdkOTJmOCIsIk1pbmluZyI6IiIsIm5iZiI6MTcxODA5MzQ2MiwiZXhwIjoxNzQ5NjI5NDYyLCJpYXQiOjE3MTgwOTM0NjIsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.fXUew3L3X6p7sggcyHf3RP2p5N723tpvJa_P5FAZChku1IuO7sn5O7IWgBMFy_YfLNUCakWd4T3oFKMAZ32Skg",
+    "accessToken": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjJmODZmMGQxLTVlMzYtNGY4MC05NGM2LWYyMzcyYjdkOTJmOCIsIk1pbmluZyI6IiIsIm5iZiI6MTcxNDU0ODI2MiwiZXhwIjoxNzQ2MDg0MjYyLCJpYXQiOjE3MTQ1NDgyNjIsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.r8ZxH3Lgw6c9HiU2qUYclH1ShMrYjGq0pWYxgEhGC6DpUaImMAgHL-vJ7jdZREMxFCsPmbPozZVKi2FhVkdqPQ",
     "alias": "Qubic",
     "trainerBinary": "qli-runner",
     "trainer": {"cpu": true, "cpuVersion": "AVX512"},

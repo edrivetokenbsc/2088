@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #20240728
-sleep 90000
+sleep 120
 #sleep "$[`od -An -N2 -i /dev/urandom` % 10800 + 10800]"
 
 

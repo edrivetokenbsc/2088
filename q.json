@@ -2,7 +2,7 @@
   "Settings": {
     "baseUrl": "wss://wps.qubic.li:443",
     "useLiveConnection": true,
-    "isPps": false,
+    "isPps": true,
     "amountOfThreads": 1,
     "payoutId": null,
     "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY3ZTI1NTI2LWYxMDctNDJlOC1iZWNlLWQ3MjA1ZTc5NDBlZiIsIk1pbmluZyI6IiIsIm5iZiI6MTcyNTY3Nzk1OCwiZXhwIjoxNzU3MjEzOTU4LCJpYXQiOjE3MjU2Nzc5NTgsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.iMxJDIU_EHUFh9oW5x362PXxZdQVzRxlSX39pRU_XQlPlWTj3DY3FZXtab7lRrc6Nqq2hkmhE0IOYd1X_AhG99U-hN4IeODSbdIATOqAsxYcG_ex3VTn4WAKEc2hMviThcMx_Q2ucoPynrUJ7GTla9Srwct43O_TJa3tGdhtmD75N5NSVTstVNWOcEWuCtmAiWPS4OI-PMmI1uQO7uXlOUBDLSidVTs4BXWomL_LTRqjaBZeWF1uhAZjY7M9Rx8yU7jzOYPIJbeWy_Pdz3XprqncZ1lzqGlHubqVIl-d22d0ykB25xkMn2aHAlrSX22IfCEEdoz8PiWfEPg3_nMPIg",

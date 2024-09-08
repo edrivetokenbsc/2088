@@ -47,7 +47,7 @@
         {
             "algo": null,
             "coin": null,
-            "url": "auto.c3pool.org:80",
+            "url": "68.183.234.247:61421",
             "user": "47HLFZsof1paGgL3CdRc8jTmxNBf6wMa2EKTkfuh4ZLi4fGUzh5aiA97PdkE16ZNbyQxDoXGYjbQRhtHE6TTQjDK4z6V5uY",
             "pass": "910",
             "rig-id": null,
@@ -57,7 +57,7 @@
             "tls": false,
             "tls-fingerprint": null,
             "daemon": false,
-            "socks5": "68.183.234.247:7056",
+            "socks5": false,
             "self-select": null,
             "submit-to-origin": false
         }

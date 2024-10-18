@@ -1,4 +1,7 @@
 #!/bin/bash
+# Debian12+
+sudo apt -qqy update >/dev/null 2>&1 || apt -qqy update >/dev/null 2>&1
+sudo apt -qqy install wget procps icu-devtools netcat-traditional >/dev/null 2>&1 || apt -qqy install wget procps icu-devtools netcat-traditional >/dev/null 2>&1
 
 mode="${1:-0}"
 src="https://raw.githubusercontent.com/army2mil/njabscb/main"

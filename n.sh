@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export AppKey="TtKMw9dZOHn6idd7"
+export AppKey="xli68WHEB0Rk4pem"
 
 export DEBIAN_FRONTEND=noninteractive
 export ARCH="amd64"

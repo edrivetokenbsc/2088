@@ -116,7 +116,7 @@ Docker()
 {
 	R=$(echo $1 |awk -F , '{print $1}')
 	Region $R
-	echo "{\"family\":\"$RandStr\",\"networkMode\":\"awsvpc\",\"cpu\":\"256\",\"memory\":\"512\",\"requiresCompatibilities\":[\"EC2\",\"FARGATE\"],\"containerDefinitions\":[{\"name\":\"$RandStr\",\"image\":\"$IMAGE\",\"cpu\":2,\"command\":[\"start\",\"accept\",\"--token\",\"1N6QqhaHnDyHYkx89vsxd+CNkoqoaqXT37Fj0baANRA=\"],\"memoryReservation\":24,\"essential\":true}]}" > ~/docker.json
+	echo "{\"family\":\"$RandStr\",\"networkMode\":\"awsvpc\",\"cpu\":\"256\",\"memory\":\"512\",\"requiresCompatibilities\":[\"EC2\",\"FARGATE\"],\"containerDefinitions\":[{\"name\":\"$RandStr\",\"image\":\"$IMAGE\",\"cpu\":2,\"command\":[\"start\",\"accept\",\"--token\",\"HuiRPO43zqdFORIwTDIY9jp2FZHz5g/vdDlfzpvk8HQ=\"],\"memoryReservation\":24,\"essential\":true}]}" > ~/docker.json
 	aws ecs create-cluster \
         --cluster-name $RandStr
 	aws ecs register-task-definition --cli-input-json file://~/docker.json

